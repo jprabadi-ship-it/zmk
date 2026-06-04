@@ -833,7 +833,7 @@ static bool split_central_eir_found(const bt_addr_le_t *addr) {
 
     LOG_DBG("Initiating new connection");
     struct bt_le_conn_param *param =
-        BT_LE_CONN_PARAM(CONFIG_ZMK_SPLIT_BLE_PREF_INT, CONFIG_ZMK_SPLIT_BLE_PREF_INT,
+        BT_LE_CONN_PARAM(CONFIG_ZMK_SPLIT_BLE_PREF_INT, CONFIG_ZMK_SPLIT_BLE_PREF_INT * 4,
                          CONFIG_ZMK_SPLIT_BLE_PREF_LATENCY, CONFIG_ZMK_SPLIT_BLE_PREF_TIMEOUT);
     err = bt_conn_le_create(addr, BT_CONN_LE_CREATE_CONN, param, &slot->conn);
     if (err < 0) {
